@@ -30,7 +30,7 @@ const App = () => {
           <Route element={<Layout theme={theme} setTheme={setTheme} />}>
             <Route
               path="/dashboard"
-              element={<Dashboard theme={theme} setTheme={setTheme} />}
+              element={<Dashboard theme={theme} />}
             />
             <Route
               path="/all-projects"
