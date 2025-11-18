@@ -1,4 +1,3 @@
-import React from "react";
 import { Code, Brain, Github, Rocket } from "lucide-react";
 
 const FeaturesSection = () => {

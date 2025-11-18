@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { IoSunny } from "react-icons/io5";
 import { IoMoonSharp } from "react-icons/io5";
 

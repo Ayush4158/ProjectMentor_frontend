@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Menu, Home, BarChart3, User, CableCar } from "lucide-react";
 import ThemeToggleBtn from './ThemeToggleBtn';
 

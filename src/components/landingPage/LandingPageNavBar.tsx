@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { RiMenu3Fill, RiCloseLine } from "react-icons/ri";
 
 const LandingPageNavBar = () => {
