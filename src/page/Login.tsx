@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
 import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { login } from '../app/authSlice'
 
 type LoginFormInput = {
@@ -32,7 +32,7 @@ const handleUserLogin = async (loginData: LoginFormInput) => {
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<LoginFormInput>()
   const queryClient = useQueryClient()
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const { mutate, isPending, isError, error, isSuccess } = useMutation({
