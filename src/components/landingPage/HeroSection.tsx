@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const HeroSection = () => {
   return (
     <section id="home" className="relative pt-32 flex pb-20 bg-gradient-to-b from-purple-50 via-white to-purple-400 overflow-hidden">
-      {/* Decorative Blobs */}
+      {/* Decorative Blobsss */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-purple-200/40 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse" />
       <div className="absolute bottom-0 right-0 w-[28rem] h-[28rem] bg-fuchsia-300/30 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 animate-pulse" />
 
