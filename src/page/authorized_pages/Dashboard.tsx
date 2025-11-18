@@ -15,10 +15,10 @@ type WeeklyData = { _id: number; completedCount: number };
 type ProjectData = { _id: string; name: string };
 type ThemeType = {
   theme: string;
-  setTheme: React.Dispatch<React.SetStateAction<string>>;
+  // setTheme: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Dashboard: React.FC<ThemeType> = ({ theme, setTheme }) => {
+const Dashboard: React.FC<ThemeType> = ({ theme }) => {
   const [data, setData] = useState<{ week: string; completed: number }[]>([]);
   const [metrics, setMetrics] = useState({
     totalProjects: 0,
