@@ -39,7 +39,7 @@ const HeroSection = () => {
               whileTap={{ scale: 0.96 }}
               className="px-7 py-3.5 rounded-full bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white font-semibold shadow-lg hover:shadow-fuchsia-300 transition-all duration-300"
             >
-              <Link to={'/dashboard'}>
+              <Link to={window.location.href = `${import.meta.env.VITE_BACKEND_URL}/api/github/auth`}>
                 Get Started
               </Link>
             </motion.button>

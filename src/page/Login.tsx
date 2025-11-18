@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
 import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { login } from '../app/authSlice'
 
 type LoginFormInput = {
@@ -32,15 +32,15 @@ const handleUserLogin = async (loginData: LoginFormInput) => {
 const Login = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<LoginFormInput>()
   const queryClient = useQueryClient()
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   const { mutate, isPending, isError, error, isSuccess } = useMutation({
     mutationFn: handleUserLogin,
     onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: ['user'] })
       dispatch(login(data.data))
-      // navigate('/') 
-       window.location.href = `${import.meta.env.VITE_BACKEND_URL}/api/github/auth`;
+      navigate('/') 
+      //  window.location.href = `${import.meta.env.VITE_BACKEND_URL}/api/github/auth`;
     },
     onError: (error) => {
       console.error('❌ Login failed:', error)
