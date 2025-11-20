@@ -14,7 +14,6 @@ api.interceptors.response.use(
       originalRequest._retry = true;
 
       try {
-        // IMPORTANT FIX
         await api.post(
           "/api/user/refresh-token",
           {},
