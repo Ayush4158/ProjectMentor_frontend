@@ -14,9 +14,11 @@ api.interceptors.response.use(
       originalRequest._retry = true;
 
       try {
-        await axios.post(
-          `${import.meta.env.VITE_BACKEND_URL}/api/user/refresh-token`,
-          { withCredentials: true }
+        // IMPORTANT FIX
+        await api.post(
+          "/api/user/refresh-token",
+          {},
+          { withCredentials: true }  
         );
 
         return api(originalRequest);

@@ -5,7 +5,7 @@ export const useAuth = () => {
   return useQuery({
     queryKey: ['authUser'],
     queryFn: async () => {
-      const { data } = await api.get(`/api/user/me`)
+      const { data } = await api.get(`/api/user/me`, {withCredentials: true})
       return data.data
     },
     retry: false,
