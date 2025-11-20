@@ -9,13 +9,11 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-// import SideBar from "../../components/SideBar";
 
 type WeeklyData = { _id: number; completedCount: number };
 type ProjectData = { _id: string; name: string };
 type ThemeType = {
   theme: string;
-  // setTheme: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const Dashboard: React.FC<ThemeType> = ({ theme }) => {

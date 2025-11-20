@@ -6,6 +6,7 @@ import Layout from "./components/Layout"; // 👈 Import layout
 import AllProject from "./page/authorized_pages/AllProject";
 import Project from "./page/authorized_pages/Project";
 import AiAssistance from "./page/authorized_pages/AiAssistance";
+import AiGithubPushEventSuggestion from "./page/authorized_pages/AiGithubPushEventSuggestion";
 
 const LandingPage = lazy(() => import("./page/LandingPage"));
 const Login = lazy(() => import("./page/Login"));
@@ -43,6 +44,10 @@ const App = () => {
             <Route
               path="/intellio"
               element={<AiAssistance/>}
+            />
+            <Route
+              path="/github-suggestion/:id"
+              element={<AiGithubPushEventSuggestion/>}
             />
             
           </Route>

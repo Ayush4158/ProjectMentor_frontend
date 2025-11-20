@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 
 type TaskType = {
@@ -173,6 +173,7 @@ const Project = () => {
             </p>
           </div>
         </div>
+        <Link to={`/github-suggestion/${id}`}>Github</Link>
       </div>
 
       <div className="max-w-4xl mx-auto">
