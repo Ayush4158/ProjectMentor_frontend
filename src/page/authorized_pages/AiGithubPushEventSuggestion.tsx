@@ -1,13 +1,26 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import AiSuggestionCard from '../../components/AiSuggestionCard';
+import ConnectToGithub from '../../components/ConnectToGithub';
+import Loading from '../../components/Loading';
 
-const AiGithubPushEventSuggestion = () => {
+type AiSuggestionProp = {
+    commitMessage: string,
+    suggestion: string,
+    createdAt: Date
+  }
+
+type ThemeType = {
+  theme: string;
+};
+
+const AiGithubPushEventSuggestion:React.FC<ThemeType> = ({theme}) => {
 
   const { id } = useParams();
   const [isAccessToken, setIsAccessToken] = useState(false)
   const [projectName, setProjectName] = useState('')
-  const [aiSuggestion, setAiSuggestion] = useState([])
+  const [aiSuggestion, setAiSuggestion] = useState<AiSuggestionProp[]>([])
   const [loading, setLoading] = useState(true)
 
 
@@ -35,21 +48,22 @@ const AiGithubPushEventSuggestion = () => {
     fetchData()
   },[id])
 
-  if(loading) return <div>Loading...</div>
+  if(loading) return <Loading/>
 
   return (
     <div>
-      {projectName}
       {
         !isAccessToken ? (
-          <button>Connect Github</button>
+          <ConnectToGithub theme={theme}/>
         ) : (
           <div>
             {
               aiSuggestion ? (
-                  aiSuggestion?.map((sug: any) => {
-                    return <div key={sug.commitMessage}>{sug.suggestion}</div>
-                  })
+                aiSuggestion.map((sug:AiSuggestionProp) => {
+                  return <div>
+                    <AiSuggestionCard suggestion={sug} />
+                  </div>
+                })
               ) : (
                 <div>No suggestion</div>
               )

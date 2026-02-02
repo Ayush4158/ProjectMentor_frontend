@@ -27,12 +27,12 @@ const ThemeToggleBtn: React.FC<ThemeType> = ({theme, setTheme}) => {
   }, [theme])
   
   return (
-    <button aria-label="Toggle theme" type="button">
+    <button aria-label="Toggle theme" type="button" className='p-2 rounded-full bg-btn-light dark:bg-btn-dark hover:shadow-lg shadow-black/15 dark:shadow-white/15'>
       {theme === 'dark'? (
-        <IoSunny onClick={() => setTheme('light')} />
+        <IoSunny className='text-white' onClick={() => setTheme('light')} size={25} />
       ): 
       (
-        <IoMoonSharp onClick={() => setTheme('dark')} />
+        <IoMoonSharp onClick={() => setTheme('dark')} size={25} />
       )}
       
     </button>

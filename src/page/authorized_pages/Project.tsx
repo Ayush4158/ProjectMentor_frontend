@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
+import Loading from "../../components/Loading";
 
 type TaskType = {
   _id: string;
@@ -99,9 +100,7 @@ const Project = () => {
 
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-screen text-gray-500 dark:text-gray-400">
-        Loading...
-      </div>
+      <Loading/>
     );
   }
 
