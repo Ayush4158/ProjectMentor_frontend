@@ -1,4 +1,3 @@
-import React from 'react'
 import CircularText from './CircularText'
 
 const SubmitingForm = () => {

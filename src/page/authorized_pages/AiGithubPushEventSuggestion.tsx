@@ -19,7 +19,7 @@ const AiGithubPushEventSuggestion:React.FC<ThemeType> = ({theme}) => {
 
   const { id } = useParams();
   const [isAccessToken, setIsAccessToken] = useState(false)
-  const [projectName, setProjectName] = useState('')
+  // const [projectName, setProjectName] = useState('')
   const [aiSuggestion, setAiSuggestion] = useState<AiSuggestionProp[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -34,7 +34,7 @@ const AiGithubPushEventSuggestion:React.FC<ThemeType> = ({theme}) => {
       setIsAccessToken(statusRes.data.data.connected);
 
       if(ProjectRes.status === 200){
-        setProjectName(ProjectRes.data.name);
+        // setProjectName(ProjectRes.data.name);
         setAiSuggestion(ProjectRes.data.aiSuggestion)
       }
     } catch (error) {
